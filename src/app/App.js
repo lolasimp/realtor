@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import connection from '../firebaseRequests/connection';
 import Listings from '../components/Listings/Listings';
 import Building from '../components/Building/Building';
 import ListingForm from '../components/ListingForm/ListingForm';
 
 class App extends Component {
+  componentDidMount () {
+    connection ();
+  }
+
   render () {
     return (
       <div className="App">
