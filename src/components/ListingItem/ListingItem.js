@@ -1,13 +1,17 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 
 import './ListingItem.css';
+import {listingShape} from '../../propz/listingProp';
 
 class ListingItem extends React.Component {
+  static propTypes = {
+    listing: listingShape,
+  }
   render () {
+    const {listing} = this.props;
     return (
-      <div className = "ListingItem">
-        <h2>ListingItem</h2>
-      </div>
+      <li>{listing.price}</li>
     );
   }
 }
