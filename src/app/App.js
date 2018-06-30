@@ -11,7 +11,15 @@ import ListingForm from '../components/ListingForm/ListingForm';
 class App extends Component {
   state = {
     listings: [],
+    selectedListeningId: -1,
   }
+
+  listingSelect = (id) => {
+    this.setState({
+      selectedListeningId: id,
+    });
+  }
+
   componentDidMount () {
     connection ();
     listingRequests.getRequest()
@@ -27,7 +35,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="col-sm-6">
-          <Listings listings = {this.state.listings}/>
+          <Listings
+            listings = {this.state.listings}
+            onListingSelection = {this.listingSelect}
+          />
         </div>
         <div className="col-sm-6">
           <Building />
