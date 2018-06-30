@@ -16,7 +16,7 @@ class App extends Component {
 
   listingSelect = (id) => {
     this.setState({
-      selectedListingId: id,
+      selectedListeningId: id,
     });
   }
 
@@ -37,7 +37,7 @@ class App extends Component {
         <div className="col-sm-6">
           <Listings
             listings = {this.state.listings}
-            onListingSelection = {this.listingSelectEvent}
+            onListingSelection = {this.listingSelect}
           />
         </div>
         <div className="col-sm-6">
